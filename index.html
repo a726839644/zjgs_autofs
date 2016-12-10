@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <title>获取Excel报表数据</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <style>
+        body{
+            background: #eeeeee;
+        }
+        .row {
+            margin-bottom: 20px;
+        }
+
+        select {
+            min-width: 100px;
+        }
+
+        #download_template {
+            margin-right: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <h1>自动填报浙江财务报表</h1>
+    </div>
+    <div class="row">
+        <p class="text-info">需上传指定格式的excel报表。</p>
+    </div>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="row">
+        <form id="upload_form" role="form" class="form-inline">
+            <div class="form-group">
+                <a id="download_template" class="btn btn-primary" href="templates/fs_template.xlsx">下载模版</a>
+                <label for="upload_excel" class="form-control btn btn-primary">上传报表</label>
+                <span id="filename"></span>
+                <input id="upload_excel" class="hidden" name="statements" type="file" accept=".xlsx"/>
+            </div>
+        </form>
+    </div>
+    <div class="row">
+        <div id="code_area">
+            <form class="" role="form">
+                <div class="form-group form-inline">
+                    <select id="select_statement" class="form-control" name="select_statement">
+                    </select>
+                    <select id="selectQN" class="form-control" name="selectQN">
+                    </select>
+                    <select id="statement_date" class="form-control">
+                    </select>
+                </div>
+                <textarea id="view_code" class="form-control" rows="20">
+                </textarea>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="js/statement_parse.min.js"></script>
+</body>
+</html>
