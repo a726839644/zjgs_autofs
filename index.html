@@ -5,9 +5,10 @@
     <title>获取Excel报表数据</title>
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body{
+        body {
             background: #eeeeee;
         }
+
         .row {
             margin-bottom: 20px;
         }
@@ -36,6 +37,9 @@
         <form id="upload_form" role="form" class="form-inline">
             <div class="form-group">
                 <a id="download_template" class="btn btn-primary" href="templates/fs_template.xlsx">下载模版</a>
+                <select id="region" class="form-control" name="region">
+                    <option value="zhejiang">浙江</option>
+                </select>
                 <label for="upload_excel" class="form-control btn btn-primary">上传报表</label>
                 <span id="filename"></span>
                 <input id="upload_excel" class="hidden" name="statements" type="file" accept=".xlsx"/>

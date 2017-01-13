@@ -5,6 +5,7 @@
 +function ($) {
 
     var $uploadExcel = $("#upload_excel");
+    var $region = $('#region');
     var $filenameSpan = $("#filename");
     var $uploadForm = $("#upload_form");
     var $selectStatement = $("#select_statement");
@@ -15,6 +16,7 @@
 
     function uploadHandler() {
         var path = $uploadExcel.val();
+        var region = $region.val();
         $filenameSpan.html(path.substring(path.lastIndexOf("\\") + 1));
         $.ajax({
             url: "/statements_parse_action",
@@ -35,7 +37,7 @@
                     $textArea.html("");
                 }
                 else {
-                    viewCode(data);
+                    viewCode(data, region);
                 }
             },
             error: function (data, status, e) {
@@ -57,7 +59,7 @@
         $select.append($option);
     }
 
-    function viewCode(data) {
+    function viewCode(data, region) {
         var codes = {};
         $selectStatement.html("");
         for (var name in data) {
